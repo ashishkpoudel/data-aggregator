@@ -64,6 +64,9 @@ class DumpUpload extends AbstractDumpCommand
         # Copy our dumps into the repo
         $this->passthru('cp -r %s %s', $tablesSrcPath, $repoPath);
 
+        # Add VERSION file with current commit
+        $this->passthru('git -C %s rev-parse HEAD > %s', base_path(), $repoPath . '/VERSION');
+
         # Add all files to index, commit, and push
         $this->passthru('git -C %s add -A', $repoPath);
 
