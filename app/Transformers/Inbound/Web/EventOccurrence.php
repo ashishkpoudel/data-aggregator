@@ -14,7 +14,7 @@ class EventOccurrence extends WebTransformer
     {
 
         return [
-            // 'id' => $this->getCantorId( $datum ),
+            'id' => $this->getCantorId( $datum ),
             'event_id' => $datum->id,
         ];
 
@@ -48,6 +48,7 @@ class EventOccurrence extends WebTransformer
     private function getCantorId( $datum )
     {
         $timestamp = $datum->date('start_at'); // max one occurrence of a given master event per second
+        $timestamp -= 1514786400; // date("U",strtotime('2018-01-01T00:00:00-06:00'));
         $timestamp = $timestamp / 60; // max one occurrence per minute
         $timestamp = $timestamp / 15; // max one occurrence every fifteen minutes
 

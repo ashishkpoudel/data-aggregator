@@ -6,6 +6,12 @@ use App\Transformers\Outbound\AbstractTransformer as BaseTransformer;
 
 class EventOccurrence extends BaseTransformer
 {
+    /**
+     * Cantor pairs exceed integer limits.
+     *
+     * @var string
+     */
+    protected $keyType = 'long';
 
     protected function getFields()
     {
