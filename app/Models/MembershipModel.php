@@ -11,6 +11,4 @@ class MembershipModel extends BaseModel
 
     protected $primaryKey = 'membership_id';
 
-    protected $fakeIdsStartAt = 99900000;
-
 }
