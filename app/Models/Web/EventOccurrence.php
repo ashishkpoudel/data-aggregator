@@ -18,6 +18,8 @@ class EventOccurrence extends WebModel
         'end_at' => 'datetime',
     ];
 
+    public static $sourceLastUpdateDateField = 'updated_at';
+
     public function event()
     {
 
